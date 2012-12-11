@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'LittleClipper' target in the 'LittleClipper' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
