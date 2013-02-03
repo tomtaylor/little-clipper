@@ -7,12 +7,18 @@
 //
 
 #import "TTAppDelegate.h"
+#import "TTPasteboardManager.h"
+#import "TTStringPrintFormatter.h"
 
 @implementation TTAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    // Register supported objects and their associated print formatter classes
+    [[TTPasteboardManager sharedManager] registerContentClass:[NSString class]
+                                               printFormatter:[TTStringPrintFormatter class]];
+    
+    
 }
 
 @end

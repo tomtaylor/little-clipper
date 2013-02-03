@@ -13,6 +13,9 @@
 		E2B3AA871677BBC400AEF565 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E2B3AA851677BBC400AEF565 /* Credits.rtf */; };
 		E2B3AA8A1677BBC400AEF565 /* TTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B3AA891677BBC400AEF565 /* TTAppDelegate.m */; };
 		E2B3AA8D1677BBC400AEF565 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2B3AA8B1677BBC400AEF565 /* MainMenu.xib */; };
+		E2C5DFA716BE614D00A8D179 /* TTStringPrintFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C5DFA616BE614D00A8D179 /* TTStringPrintFormatter.m */; };
+		E2C5DFAA16BE649B00A8D179 /* TTPasteboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C5DFA916BE649B00A8D179 /* TTPasteboardManager.m */; };
+		E2C5DFB016BE85CE00A8D179 /* TTDeliveryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C5DFAF16BE85CE00A8D179 /* TTDeliveryManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,12 @@
 		E2B3AA881677BBC400AEF565 /* TTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTAppDelegate.h; sourceTree = "<group>"; };
 		E2B3AA891677BBC400AEF565 /* TTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTAppDelegate.m; sourceTree = "<group>"; };
 		E2B3AA8C1677BBC400AEF565 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E2C5DFA516BE614D00A8D179 /* TTStringPrintFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTStringPrintFormatter.h; sourceTree = "<group>"; };
+		E2C5DFA616BE614D00A8D179 /* TTStringPrintFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTStringPrintFormatter.m; sourceTree = "<group>"; };
+		E2C5DFA816BE649B00A8D179 /* TTPasteboardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTPasteboardManager.h; sourceTree = "<group>"; };
+		E2C5DFA916BE649B00A8D179 /* TTPasteboardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTPasteboardManager.m; sourceTree = "<group>"; };
+		E2C5DFAE16BE85CE00A8D179 /* TTDeliveryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTDeliveryManager.h; sourceTree = "<group>"; };
+		E2C5DFAF16BE85CE00A8D179 /* TTDeliveryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTDeliveryManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +95,12 @@
 				E2B3AA891677BBC400AEF565 /* TTAppDelegate.m */,
 				E2B3AA8B1677BBC400AEF565 /* MainMenu.xib */,
 				E2B3AA7D1677BBC400AEF565 /* Supporting Files */,
+				E2C5DFA516BE614D00A8D179 /* TTStringPrintFormatter.h */,
+				E2C5DFA616BE614D00A8D179 /* TTStringPrintFormatter.m */,
+				E2C5DFA816BE649B00A8D179 /* TTPasteboardManager.h */,
+				E2C5DFA916BE649B00A8D179 /* TTPasteboardManager.m */,
+				E2C5DFAE16BE85CE00A8D179 /* TTDeliveryManager.h */,
+				E2C5DFAF16BE85CE00A8D179 /* TTDeliveryManager.m */,
 			);
 			path = LittleClipper;
 			sourceTree = "<group>";
@@ -169,6 +184,9 @@
 			files = (
 				E2B3AA831677BBC400AEF565 /* main.m in Sources */,
 				E2B3AA8A1677BBC400AEF565 /* TTAppDelegate.m in Sources */,
+				E2C5DFA716BE614D00A8D179 /* TTStringPrintFormatter.m in Sources */,
+				E2C5DFAA16BE649B00A8D179 /* TTPasteboardManager.m in Sources */,
+				E2C5DFB016BE85CE00A8D179 /* TTDeliveryManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +316,7 @@
 				E2B3AA921677BBC400AEF565 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
