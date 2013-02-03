@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC1A8A335BDF4514A1190525 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 840D2285692647F1928D16D5 /* libPods.a */; };
 		E2B3AA771677BBC400AEF565 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B3AA761677BBC400AEF565 /* Cocoa.framework */; };
 		E2B3AA811677BBC400AEF565 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2B3AA7F1677BBC400AEF565 /* InfoPlist.strings */; };
 		E2B3AA831677BBC400AEF565 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B3AA821677BBC400AEF565 /* main.m */; };
@@ -16,9 +17,12 @@
 		E2C5DFA716BE614D00A8D179 /* TTStringPrintFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C5DFA616BE614D00A8D179 /* TTStringPrintFormatter.m */; };
 		E2C5DFAA16BE649B00A8D179 /* TTPasteboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C5DFA916BE649B00A8D179 /* TTPasteboardManager.m */; };
 		E2C5DFB016BE85CE00A8D179 /* TTDeliveryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C5DFAF16BE85CE00A8D179 /* TTDeliveryManager.m */; };
+		E2C5DFB216BE8A7500A8D179 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2C5DFB116BE8A7500A8D179 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		58DD34C2EE7D4AB1A0E95F4B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		840D2285692647F1928D16D5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2B3AA721677BBC400AEF565 /* LittleClipper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LittleClipper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2B3AA761677BBC400AEF565 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E2B3AA791677BBC400AEF565 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -38,6 +42,8 @@
 		E2C5DFA916BE649B00A8D179 /* TTPasteboardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTPasteboardManager.m; sourceTree = "<group>"; };
 		E2C5DFAE16BE85CE00A8D179 /* TTDeliveryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTDeliveryManager.h; sourceTree = "<group>"; };
 		E2C5DFAF16BE85CE00A8D179 /* TTDeliveryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTDeliveryManager.m; sourceTree = "<group>"; };
+		E2C5DFB116BE8A7500A8D179 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E2C5DFB316BEDA9200A8D179 /* TTPrintFormatterProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTPrintFormatterProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +51,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2C5DFB216BE8A7500A8D179 /* SystemConfiguration.framework in Frameworks */,
 				E2B3AA771677BBC400AEF565 /* Cocoa.framework in Frameworks */,
+				CC1A8A335BDF4514A1190525 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +66,7 @@
 				E2B3AA7C1677BBC400AEF565 /* LittleClipper */,
 				E2B3AA751677BBC400AEF565 /* Frameworks */,
 				E2B3AA731677BBC400AEF565 /* Products */,
+				58DD34C2EE7D4AB1A0E95F4B /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +83,7 @@
 			children = (
 				E2B3AA761677BBC400AEF565 /* Cocoa.framework */,
 				E2B3AA781677BBC400AEF565 /* Other Frameworks */,
+				840D2285692647F1928D16D5 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -84,6 +94,7 @@
 				E2B3AA791677BBC400AEF565 /* AppKit.framework */,
 				E2B3AA7A1677BBC400AEF565 /* CoreData.framework */,
 				E2B3AA7B1677BBC400AEF565 /* Foundation.framework */,
+				E2C5DFB116BE8A7500A8D179 /* SystemConfiguration.framework */,
 			);
 			name = "Other Frameworks";
 			sourceTree = "<group>";
@@ -101,6 +112,7 @@
 				E2C5DFA916BE649B00A8D179 /* TTPasteboardManager.m */,
 				E2C5DFAE16BE85CE00A8D179 /* TTDeliveryManager.h */,
 				E2C5DFAF16BE85CE00A8D179 /* TTDeliveryManager.m */,
+				E2C5DFB316BEDA9200A8D179 /* TTPrintFormatterProtocol.h */,
 			);
 			path = LittleClipper;
 			sourceTree = "<group>";
@@ -127,6 +139,7 @@
 				E2B3AA6E1677BBC400AEF565 /* Sources */,
 				E2B3AA6F1677BBC400AEF565 /* Frameworks */,
 				E2B3AA701677BBC400AEF565 /* Resources */,
+				1308D3CC2C044DA6BAC9ACCF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,6 +189,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1308D3CC2C044DA6BAC9ACCF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E2B3AA6E1677BBC400AEF565 /* Sources */ = {
@@ -275,11 +305,13 @@
 		};
 		E2B3AA911677BBC400AEF565 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58DD34C2EE7D4AB1A0E95F4B /* Pods.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LittleClipper/LittleClipper-Prefix.pch";
 				INFOPLIST_FILE = "LittleClipper/LittleClipper-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -287,11 +319,13 @@
 		};
 		E2B3AA921677BBC400AEF565 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58DD34C2EE7D4AB1A0E95F4B /* Pods.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LittleClipper/LittleClipper-Prefix.pch";
 				INFOPLIST_FILE = "LittleClipper/LittleClipper-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

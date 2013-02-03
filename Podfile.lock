@@ -1,0 +1,14 @@
+
+PODS:
+- AFNetworking (1.1.0)
+- NSString-HTML (0.0.1)
+
+DEPENDENCIES:
+- AFNetworking (= 1.1.0)
+- NSString-HTML
+
+SPEC CHECKSUMS:
+  AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
+  NSString-HTML: 3e9d6ccd36691c41d85839f8095059e5b5c07e70
+
+COCOAPODS: 0.16.2

@@ -7,16 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+@class TTDeliveryManager;
 
 @interface TTPasteboardManager : NSObject {
-    NSMutableDictionary *registeredPrintFormatters;
+    NSMutableArray *registeredPrintFormatters;
     NSPasteboard *pasteboard;
+    TTDeliveryManager *deliveryManager;
 }
 
 + (TTPasteboardManager *)sharedManager;
 
-- (BOOL)printPasteboard;
-- (BOOL)canPrintPasteboard;
+- (NSString *)generateHTML;
+- (BOOL)canGenerateHTML;
 
 - (void)registerContentClass:(Class)contentClass
               printFormatter:(Class)printFormatterClass;

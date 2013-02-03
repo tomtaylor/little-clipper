@@ -7,20 +7,18 @@
 //
 
 #import "TTStringPrintFormatter.h"
+#import "NSString+HTML.h"
 
 @implementation TTStringPrintFormatter
 
-- (id)initWithPasteboardObject:(NSString *)_string
+- (NSString *)generateHTML:(id)object
 {
-    self = [super init];
-    if (self) {
-        string = _string;
+    if (![object isKindOfClass:[NSString class]]) {
+        return nil;
     }
-    return self;
-}
-
-- (NSString *)generateHTML
-{
+          
+    NSString *string = object;
+    
     NSUInteger length = [string length];
     NSUInteger paraStart = 0, paraEnd = 0, contentsEnd = 0;
     NSMutableArray *paragraphs = [NSMutableArray array];
@@ -32,9 +30,10 @@
         [paragraphs addObject:[string substringWithRange:currentRange]];
     }
     
+    // TODO: Handle <br /> line breaks.
     __block NSMutableString *html = [NSMutableString stringWithString:@"<html><body>"];
     [paragraphs enumerateObjectsUsingBlock:^(NSString *paragraph, NSUInteger idx, BOOL *stop) {
-        [html appendString:[NSString stringWithFormat:@"<p>%@</p>", paragraph]];
+        [html appendString:[NSString stringWithFormat:@"<p>%@</p>", [paragraph kv_encodeHTMLCharacterEntities]]];
     }];
     
     [html appendString:@"</body></html>"];

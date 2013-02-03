@@ -7,9 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+@class AFHTTPClient;
 
 @interface TTDeliveryManager : NSObject {
     NSString *directPrintCode;
+    AFHTTPClient *httpClient;
 }
+
+- (id)initWithDirectPrintCode:(NSString *)_directPrintCode;
+
+- (void)sendHTML:(NSString *)html;
 
 @end

@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Tom Taylor. All rights reserved.
 //
 
-@interface TTStringPrintFormatter : NSObject {
-    NSString *string;
-}
+#import "TTPrintFormatterProtocol.h"
+
+@interface TTStringPrintFormatter : NSObject <TTPrintFormatterProtocol>
 
 @end

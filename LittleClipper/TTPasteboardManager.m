@@ -7,6 +7,7 @@
 //
 
 #import "TTPasteboardManager.h"
+#import "TTPrintFormatterProtocol.h"
 
 @implementation TTPasteboardManager
 
@@ -24,41 +25,67 @@
 {
     self = [super init];
     if (self) {
-        registeredPrintFormatters = [[NSMutableDictionary alloc] init];
+        registeredPrintFormatters = [[NSMutableArray alloc] init];
         pasteboard = [NSPasteboard generalPasteboard];
     }
     return self;
 }
 
 // Attempts to print the pasteboard, if a supported object is present
-- (BOOL)printPasteboard {
-    if (![self canPrintPasteboard]) {
-        return NO;
+- (NSString *)generateHTML {
+    if (![self canGenerateHTML]) {
+        return nil;
     }
     
     NSArray *objects = [pasteboard readObjectsForClasses:[self registeredObjectClasses] options:nil];
     
     id object = [objects objectAtIndex:0];
-    id printFormatter = [registeredPrintFormatters objectForKey:[object class]];
+    if (object) {
+        Class printFormatterClass = [self registeredPrintFormatterClassForContentObject:object];
+        id<TTPrintFormatterProtocol> printFormatter = [[printFormatterClass alloc] init];
+        return [printFormatter generateHTML:object];
+    } else {
+        return nil;
+    }
 }
 
 // Checks whether the pasteboard contains any printable objects
-- (BOOL)canPrintPasteboard {
+- (BOOL)canGenerateHTML {
     return [pasteboard canReadObjectForClasses:[self registeredObjectClasses] options:nil];
 }
 
+// Registered a print formatter class for a class of object on the pasteboard
 - (void)registerContentClass:(Class)contentClass
               printFormatter:(Class)printFormatterClass
 {
-    // We perform explicit type conversion to store a Class as the dictionary key.
-    // http://stackoverflow.com/questions/12525324/unable-to-use-class-as-a-key-in-nsdictionary-with-xcode-4-5/12525479#12525479
-    [registeredPrintFormatters setObject:printFormatterClass forKey:(id <NSCopying>)contentClass];
+    [registeredPrintFormatters addObject:@[contentClass, printFormatterClass]];
+}
+
+// Retrieve the printFormatterClass for an object on the pasteboard
+- (Class)registeredPrintFormatterClassForContentObject:(id)object {
+    __block Class printFormatterClass = nil;
+    
+    [registeredPrintFormatters enumerateObjectsUsingBlock:^(NSArray *classPair, NSUInteger idx, BOOL *stop) {
+        Class contentClass = [classPair objectAtIndex:0];
+        if ([object isKindOfClass:contentClass]) {
+            printFormatterClass = [classPair objectAtIndex:1];
+            stop = YES;
+        }
+    }];
+    
+    return printFormatterClass;
 }
 
 #pragma mark Private methods
 
 - (NSArray *)registeredObjectClasses {
-    return [registeredPrintFormatters allKeys];
+    NSMutableArray *registeredContentClasses = [[NSMutableArray alloc] initWithCapacity:registeredPrintFormatters.count];
+    
+    [registeredPrintFormatters enumerateObjectsUsingBlock:^(NSArray *classPair, NSUInteger idx, BOOL *stop) {
+        [registeredContentClasses addObject:[classPair objectAtIndex:0]];
+    }];
+    
+    return registeredContentClasses;
 }
 
 @end
